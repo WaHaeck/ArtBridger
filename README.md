@@ -1,3 +1,5 @@
+*Note: While this project was initially developed within a private repository, it has been made public for demonstration purposes.*
+
 <br />
 <div align="center">
   <h2 align="center">ArtBridger: Bridging Digital Art to the Physical World through NFTs</h2>
