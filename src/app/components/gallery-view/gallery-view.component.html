@@ -1,0 +1,14 @@
+<section class="gallery-view">
+  <div class="container">
+    <article class="gallery-view_grid">
+      <app-gallery-card
+        *ngFor="let nft of nfts"
+        [info]="nft"
+        (click)="handleClick(nft.ID)"
+      ></app-gallery-card>
+    </article>
+    <div class="spinner-wrapper" *ngIf="isLoading">
+      <mat-spinner [diameter]="40"></mat-spinner>
+    </div>
+  </div>
+</section>

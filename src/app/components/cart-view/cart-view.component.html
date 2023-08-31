@@ -1,0 +1,57 @@
+<section class="cart-view">
+  <div class="container">
+    <article class="cart-view_grid">
+      <div class="cart-view_wrapper">
+        <div class="cart-view_wrapper_actions">
+          <app-button
+            [text]="'Back to gallery'"
+            (click)="handleGalleryClick()"
+          ></app-button>
+        </div>
+        <div class="cart-view_wrapper_content">
+          <div
+            class="cart-view_wrapper_content_placeholder"
+            *ngIf="cartItems.length === 0"
+          >
+            <p>Your cart is empty.</p>
+          </div>
+          <table *ngIf="cartItems.length > 0">
+            <tr id="rounded">
+              <th *ngFor="let col of displayedColumns">{{ col }}</th>
+            </tr>
+            <tr *ngFor="let item of cartItems">
+              <td id="image"><img src="{{ item.nft.image }}" /></td>
+              <td id="product">{{ item.product.name }}</td>
+              <td id="size">{{ item.size.displayValue }}</td>
+              <td id="price">€ {{ item.size.price }}</td>
+              <td id="amount">{{ item.quantity }}</td>
+              <td id="subtotal">€ {{ item.size.price * item.quantity }}</td>
+              <td id="actions">
+                <div id="actionIcon" (click)="handleGoToDetails(item)">
+                  <i class="far fa-eye"></i>
+                </div>
+                <div id="actionIcon" (click)="handleRemoveFromCart(item)">
+                  <i class="far fa-trash-alt"> </i>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <ng-container *ngIf="cartItems.length > 0">
+          <div class="cart-view_wrapper_total">
+            <div class="cart-view_wrapper_total_card">
+              <div id="total">Total</div>
+              <div id="value">€ {{ totalCartValue }}</div>
+            </div>
+          </div>
+          <div class="cart-view_wrapper_actions">
+            <app-button
+              [text]="'Continue checkout'"
+              (click)="handleCheckoutClick()"
+            ></app-button>
+          </div>
+        </ng-container>
+      </div>
+    </article>
+  </div>
+</section>

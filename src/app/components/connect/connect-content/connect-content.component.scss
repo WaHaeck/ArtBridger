@@ -1,0 +1,30 @@
+@import "../../../../constants.scss";
+
+#title {
+  color: $primary;
+  margin-top: 34px;
+}
+
+.connect {
+  position: relative;
+
+  &_options {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 120px);
+    grid-gap: 20px;
+    justify-content: center;
+  }
+
+  &_close {
+    position: absolute;
+    top: -44px;
+    right: -4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

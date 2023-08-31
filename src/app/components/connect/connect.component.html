@@ -1,0 +1,21 @@
+<div class="connect">
+  <div
+    class="connect_button"
+    *ngIf="!isUserLoggedIn; else userLogout"
+    (click)="handleLoginClick()"
+  >
+    {{ labelText }}
+  </div>
+</div>
+
+<ng-template #userLogout>
+  <app-button
+    mat-button
+    [matMenuTriggerFor]="menu"
+    [text]="labelText"
+  ></app-button>
+  <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item (click)="handleLogoutClick()">Logout</button>
+  </mat-menu>
+</ng-template>

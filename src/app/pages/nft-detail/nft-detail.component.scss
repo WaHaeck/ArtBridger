@@ -1,0 +1,5 @@
+@import "../../../constants.scss";
+
+.detailsPage {
+  min-height: calc(100vh - #{$navbarHeight});
+}

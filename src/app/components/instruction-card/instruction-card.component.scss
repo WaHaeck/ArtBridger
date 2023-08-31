@@ -1,0 +1,40 @@
+@import "../../../constants.scss";
+
+.instructionCard {
+  position: relative;
+  margin: 20px;
+  background: $secundary;
+
+  &_step {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 20px;
+    background: $primary;
+    color: white;
+    font-weight: bold;
+  }
+
+  &_icon {
+    padding: 40px;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    color: $primary;
+  }
+
+  &_title {
+    font-weight: bold;
+    color: $primary;
+    padding: 20px;
+    padding-bottom: 10px;
+  }
+
+  &_description {
+    padding: 20px;
+    padding-top: 10px;
+    min-height: 80px;
+  }
+}

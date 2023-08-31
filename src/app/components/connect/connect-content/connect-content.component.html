@@ -1,0 +1,16 @@
+<div class="connect">
+  <div class="connect_close" (click)="handleClose()">
+    <i class="fas fa-times"></i>
+  </div>
+  <h3 id="title">Connect to the {{ network }} network</h3>
+  <div class="connect_options">
+    <app-connect-option
+      [option]="'walletconnect'"
+      (click)="handleLoginClick('walletconnect')"
+    ></app-connect-option>
+    <app-connect-option
+      [option]="'metamask'"
+      (click)="handleLoginClick('metamask')"
+    ></app-connect-option>
+  </div>
+</div>

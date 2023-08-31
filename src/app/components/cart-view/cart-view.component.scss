@@ -1,0 +1,107 @@
+@import "../../../constants.scss";
+
+#rounded {
+  border-radius: 4px;
+}
+
+.cart-view {
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  &_grid {
+    display: flex;
+    justify-content: center;
+    min-width: 800px;
+    max-width: 1280px;
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 800px;
+
+    &_actions {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    &_total {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+
+      &_card {
+        padding: 20px;
+        background: $secundary;
+        color: $primary;
+        min-width: 250px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        #value {
+          font-size: 1rem;
+        }
+
+        #total {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &_content {
+      margin-bottom: 20px;
+      margin-top: 20px;
+
+      &_placeholder {
+        display: flex;
+        justify-content: center;
+      }
+
+      #image {
+        display: flex;
+        max-width: 150px;
+        padding: 0px;
+
+        img {
+          object-fit: cover;
+          max-width: 140px;
+          min-height: 140px;
+        }
+      }
+
+      th {
+        font-size: 1rem;
+        text-align: center;
+        padding: 10px;
+        background: $secundary;
+        color: $primary;
+        font-weight: normal;
+      }
+
+      td {
+        text-align: center;
+      }
+
+      tr {
+        background-color: white;
+
+        #actionIcon {
+          padding: 5px;
+
+          &:hover {
+            background: $secundary;
+          }
+        }
+      }
+
+      table {
+        border-collapse: separate;
+        border-spacing: 0 15px;
+        width: 100%;
+      }
+    }
+  }
+}

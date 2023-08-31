@@ -1,0 +1,14 @@
+<div class="cart-item">
+  <div id="image">
+    <img src="{{ cartItem.nft.image }}" />
+  </div>
+  <div id="nft">
+    <h2>{{ cartItem.nft.name }}</h2>
+  </div>
+  <div id="canvas">
+    {{ cartItem.size.displayValue }}
+  </div>
+  <div id="price">{{ cartItem.size.price }}</div>
+  <div id="amount">{{ cartItem.quantity }}</div>
+  <div id="subtotal">{{ cartItem.size.price * cartItem.quantity }}</div>
+</div>

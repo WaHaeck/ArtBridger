@@ -1,0 +1,135 @@
+@import "../../../constants.scss";
+
+$canvasWidth: var(--canvasWidth);
+$canvasHeight: var(--canvasHeight);
+
+.nft-detail-view-description {
+  background: $secundary;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  color: $primary;
+
+  &_description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+
+    h2 {
+      width: 100%;
+    }
+  }
+
+  &_image {
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}
+
+.nft-detail-view {
+  padding-top: 40px;
+  margin-bottom: 80px;
+  display: flex;
+  align-self: center;
+  color: $primary;
+
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+  }
+
+  &_imgWrapper {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    width: 450px;
+    height: 450px;
+
+    &_img {
+      display: flex;
+      align-self: center;
+      flex-direction: column;
+      background-color: white;
+      box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      height: $canvasHeight;
+      width: $canvasWidth;
+
+      img {
+        border-radius: 5px;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  &_product {
+    margin-top: 40px;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    #nftName {
+      margin-bottom: 20px;
+    }
+
+    &_description {
+      padding: 20px;
+      background-color: $secundary;
+      color: $primary;
+      border-radius: 4px;
+    }
+
+    &_variations {
+      display: flex;
+      flex-direction: row;
+
+      &_products {
+      }
+
+      &_sizes {
+        margin-left: 20px;
+      }
+    }
+
+    &_price {
+      margin: 20px 0px;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 1.5rem;
+      min-height: 40px;
+
+      &_tag {
+        background: $secundary;
+        color: $primary;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+    }
+
+    &_buttons {
+      display: flex;
+      justify-content: flex-end;
+      font-weight: bold;
+
+      app-button {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.spinner-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}

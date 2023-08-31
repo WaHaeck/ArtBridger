@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card_img">
+    <img *ngIf="!isLoading" src="{{ info.image }}" alt="{{ info.name }}" />
+    <mat-spinner [diameter]="40" *ngIf="isLoading"></mat-spinner>
+  </div>
+  <div class="card_title">
+    <div id="collectionName">{{ info.collectionName }}</div>
+    {{ info.name }}
+  </div>
+</div>

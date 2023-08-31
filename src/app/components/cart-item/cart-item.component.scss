@@ -1,0 +1,33 @@
+.cart-item {
+  max-width: 1000px;
+  min-width: 800px;
+  display: flex;
+  justify-content: flex-start;
+  background: white;
+
+  #image {
+    max-width: 125px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #nft {
+    flex-grow: 2;
+  }
+
+  #canvas {
+    flex-grow: 2;
+  }
+
+  #price {
+  }
+
+  #amount {
+  }
+
+  #subtotal {
+  }
+}

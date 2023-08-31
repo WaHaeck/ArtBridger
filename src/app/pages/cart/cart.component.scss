@@ -1,0 +1,5 @@
+@import "../../../constants.scss";
+
+.cartPage {
+  min-height: calc(100vh - #{$navbarHeight} - 60px);
+}

@@ -1,0 +1,31 @@
+<nav class="NavbarItems">
+  <div class="navbar-logo" (click)="handleItemClick('')">
+    <img id="logo" src="../../../assets/logo.png" />
+  </div>
+  <div class="menu-icon" (click)="handleClick()">
+    <i [ngClass]="isActive ? 'fas fa-times' : 'fas fa-bars'"></i>
+  </div>
+  <ul class="nav-menu" [class.active]="isActive">
+    <li>
+      <a class="nav-links" (click)="handleItemClick('')">
+        Home
+      </a>
+    </li>
+    <li>
+      <a class="nav-links" (click)="handleItemClick('gallery')">
+        Your gallery
+      </a>
+    </li>
+    <app-connect class="nav-links"></app-connect>
+    <li>
+      <a class="nav-links" (click)="handleItemClick('cart')">
+        <div *ngIf="cartItemsAmount > 0" matBadge="{{ cartItemsAmount }}">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div *ngIf="cartItemsAmount == 0">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+      </a>
+    </li>
+  </ul>
+</nav>

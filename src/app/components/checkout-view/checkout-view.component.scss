@@ -1,0 +1,134 @@
+@import "../../../constants.scss";
+
+.checkoutView {
+  padding-bottom: 80px;
+
+  &_actions {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+  }
+
+  &_shipping {
+    margin-top: 20px;
+
+    &_name {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      &_firstname {
+        margin-right: 10px;
+        width: 50%;
+        #firstName {
+          width: 100%;
+        }
+      }
+
+      &_lastname {
+        width: 50%;
+        #lastName {
+          width: 100%;
+        }
+      }
+    }
+
+    &_email {
+      #email {
+        width: 100%;
+      }
+    }
+
+    &_address1 {
+      #address1 {
+        width: 100%;
+      }
+    }
+
+    &_address2 {
+      #address2 {
+        width: 100%;
+      }
+    }
+
+    &_location {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      &_city {
+        margin-right: 10px;
+        width: 50%;
+        #city {
+          width: 100%;
+        }
+      }
+
+      &_postcode {
+        width: 50%;
+        #postcode {
+          width: 100%;
+        }
+      }
+    }
+
+    &_location2 {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      &_state {
+        margin-right: 10px;
+        width: 50%;
+        #state {
+          width: 100%;
+        }
+      }
+
+      &_country {
+        width: 50%;
+        #country {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &_payment {
+    &_summary {
+      padding: 20px;
+      background-color: $secundary;
+      color: $primary;
+      border-radius: 4px;
+
+      &_table {
+        table {
+          width: 100%;
+        }
+      }
+
+      &_info {
+        margin-top: 20px;
+
+        table {
+          text-align: right;
+          width: 100%;
+        }
+
+        #bold {
+          font-weight: bold;
+        }
+      }
+
+      &_tAndA {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

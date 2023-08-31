@@ -1,0 +1,26 @@
+@import "./../../../constants.scss";
+
+.connect {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: fit-content;
+    text-align: center;
+    background: $primary;
+    border-radius: 4px;
+    color: white;
+    padding: 8px 12px;
+
+    &:hover {
+      background: white;
+      color: $primary;
+    }
+  }
+}

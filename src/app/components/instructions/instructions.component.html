@@ -1,0 +1,17 @@
+<section class="instructions">
+  <div class="container">
+    <div class="instructions_intro">
+      <h1>How to order?</h1>
+      <div>Getting your NFT printed was never so easy.</div>
+    </div>
+    <article class="instructions_grid">
+      <app-instruction-card
+        *ngFor="let instruction of instructions; let index = index"
+        [step]="index + 1"
+        [title]="instruction.title"
+        [description]="instruction.description"
+        [icon]="instruction.icon"
+      ></app-instruction-card>
+    </article>
+  </div>
+</section>

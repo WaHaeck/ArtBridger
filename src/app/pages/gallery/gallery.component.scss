@@ -1,0 +1,5 @@
+@import "../../../constants.scss";
+
+.galleryPage {
+  min-height: calc(100vh - #{$navbarHeight} - 60px);
+}

@@ -1,0 +1,100 @@
+<section class="nft-detail-view">
+  <div class="container">
+    <article
+      class="nft-detail-view_grid"
+      *ngIf="!isLoading && !isLoadingProducts && isAuthenticated"
+    >
+      <div class="nft-detail-view_imgWrapper">
+        <div class="nft-detail-view_imgWrapper_img">
+          <img src="{{ info.image }}" />
+        </div>
+      </div>
+      <div class="nft-detail-view_info">
+        <div class="nft-detail-view_info_description">
+          <h3 id="nftName">{{ info.name }}</h3>
+          <p>{{ info.description }}</p>
+        </div>
+
+        <h3 style="margin-top: 20px;">Choose your product and size</h3>
+        <div class="nft-detail-view_info_variations">
+          <div class="nft-detail-view_info_variations_products">
+            <mat-form-field appearance="outline">
+              <mat-label>Product</mat-label>
+              <mat-select
+                [(value)]="selectedProduct"
+                [formControl]="productControl"
+                required
+              >
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let product of products" [value]="product">
+                  {{ product.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="productControl.hasError('required')"
+                >Please choose a product</mat-error
+              >
+            </mat-form-field>
+          </div>
+          <div
+            class="nft-detail-view_info_variations_sizes"
+            *ngIf="selectedProduct"
+          >
+            <mat-form-field appearance="outline">
+              <mat-label>Size</mat-label>
+              <mat-select
+                [(value)]="selectedSize"
+                [formControl]="sizeControl"
+                required
+              >
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let size of sizes" [value]="size">
+                  {{ size.displayValue }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="sizeControl.hasError('required')"
+                >Please choose a size</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="nft-detail-view_info_price">
+          <ng-container *ngIf="selectedSize">
+            <div class="nft-detail-view_info_price_tag">
+              € {{ selectedSize.price }}
+            </div></ng-container
+          >
+        </div>
+        <div class="nft-detail-view_info_buttons">
+          <app-button
+            [text]="'Add to cart'"
+            (click)="handleAddToCart()"
+          ></app-button>
+          <app-button
+            [text]="'View cart'"
+            (click)="handleCheckout()"
+          ></app-button>
+        </div>
+      </div>
+    </article>
+
+    <div class="spinner-wrapper" *ngIf="isLoading">
+      <mat-spinner [diameter]="40"></mat-spinner>
+    </div>
+  </div>
+</section>
+<section class="nft-detail-view-description" *ngIf="selectedProduct">
+  <div class="container">
+    <article
+      class="nft-detail-view_grid"
+      *ngIf="!isLoading && !isLoadingProducts && isAuthenticated"
+    >
+      <div class="nft-detail-view-description_description">
+        <h2>{{ selectedProduct.name }}</h2>
+        {{ selectedProduct.description }}
+      </div>
+      <div class="nft-detail-view-description_image">
+        <img src="../../../assets/products/{{ selectedProduct.image }}" />
+      </div>
+    </article>
+  </div>
+</section>

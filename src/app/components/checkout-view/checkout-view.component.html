@@ -1,0 +1,178 @@
+<section class="checkoutView">
+  <div class="container">
+    <article class="checkoutView_grid">
+      <form class="checkoutView_shipping" [formGroup]="form">
+        <h3>Shipping info</h3>
+        <div class="checkoutView_shipping_name">
+          <div class="checkoutView_shipping_name_firstname">
+            <mat-form-field appearance="standard" id="firstName">
+              <mat-label>First name</mat-label>
+              <input
+                matInput
+                #input
+                placeholder="First name"
+                formControlName="firstName"
+                required
+              />
+            </mat-form-field>
+          </div>
+          <div class="checkoutView_shipping_name_lastname">
+            <mat-form-field appearance="standard" id="lastName">
+              <mat-label>Last name</mat-label>
+              <input
+                matInput
+                #input
+                placeholder="Last name"
+                formControlName="lastName"
+                required
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="checkoutView_shipping_email">
+          <mat-form-field appearance="standard" id="email">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              #input
+              placeholder="Email"
+              formControlName="email"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="checkoutView_shipping_address1">
+          <mat-form-field appearance="standard" id="address1">
+            <mat-label>Address line 1</mat-label>
+            <input
+              matInput
+              #input
+              placeholder="Address line 1"
+              formControlName="address1"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="checkoutView_shipping_address2">
+          <mat-form-field appearance="standard" id="address2">
+            <mat-label>Address line 2 (optional)</mat-label>
+            <input
+              matInput
+              #input
+              placeholder="Address line 2"
+              formControlName="address2"
+            />
+          </mat-form-field>
+        </div>
+        <div class="checkoutView_shipping_location">
+          <div class="checkoutView_shipping_location_city">
+            <mat-form-field appearance="standard" id="city">
+              <mat-label>City</mat-label>
+              <input
+                matInput
+                #input
+                placeholder="City"
+                formControlName="city"
+                required
+              />
+            </mat-form-field>
+          </div>
+          <div class="checkoutView_shipping_location_postcode">
+            <mat-form-field appearance="standard" id="postcode">
+              <mat-label>Postcode</mat-label>
+              <input
+                matInput
+                #input
+                placeholder="Postcode"
+                formControlName="postcode"
+                required
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="checkoutView_shipping_location2">
+          <div class="checkoutView_shipping_location2_state">
+            <mat-form-field appearance="standard" id="state">
+              <mat-label>State / Province / Region (optional)</mat-label>
+              <input
+                matInput
+                #input
+                placeholder="state"
+                formControlName="state"
+              />
+            </mat-form-field>
+          </div>
+          <div class="checkoutView_shipping_location2_country">
+            <mat-form-field appearance="standard" id="country">
+              <mat-label>Country</mat-label>
+              <mat-select
+                formControlName="country"
+                [(value)]="selectedCountry"
+                required
+              >
+                <mat-option
+                  *ngFor="let country of shippingCountries"
+                  [value]="country.name"
+                  >{{ country.name }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+      <div class="checkoutView_payment">
+        <div class="checkoutView_payment_summary">
+          <h3>Order details</h3>
+          <div class="checkoutView_payment_summary_table">
+            <table>
+              <tr style="font-size: 0.8rem; text-align: left;">
+                <th></th>
+                <th>Product</th>
+                <th>Size</th>
+                <th>#</th>
+              </tr>
+              <tr *ngFor="let item of cartItems">
+                <td
+                  style="display: flex; justify-content: center; align-items: center;"
+                >
+                  <img
+                    src="{{ item.nft.image }}"
+                    style="max-width: 40px; object-fit: cover; margin:5px;"
+                  />
+                </td>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.size.displayValue }}</td>
+                <td>{{ item.quantity }}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="checkoutView_payment_summary_info">
+            <table>
+              <tr>
+                <td id="bold">Subtotal</td>
+                <td>€{{ totalCartValue }}</td>
+              </tr>
+              <tr>
+                <td id="bold">Shipping</td>
+                <td>€{{ totalCartValue }}</td>
+              </tr>
+              <tr>
+                <td id="bold">Total</td>
+                <td>€{{ totalCartValue }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <mat-checkbox class="checkoutView_payment_summary_tAndA"
+          >I have read and agree to the terms and conditions</mat-checkbox
+        >
+
+        <app-button
+          [text]="'Place order'"
+          (click)="handlePlaceOrderClick()"
+        ></app-button>
+      </div>
+    </article>
+  </div>
+</section>

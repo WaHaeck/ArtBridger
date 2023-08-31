@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <div class="notification">
+    <div *ngIf="title" class="notification_title">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class="notification_description">{{ description }}</div>
+    <div *ngIf="showConnect" class="notification_connect">
+      <app-connect></app-connect>
+    </div>
+  </div>
+</div>

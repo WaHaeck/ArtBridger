@@ -1,0 +1,23 @@
+.nft-filter {
+  &_grid {
+    display: flex;
+    justify-content: center;
+  }
+
+  &_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_search {
+      display: flex;
+      max-width: 450px;
+      width: 100%;
+
+      &_input {
+        flex-grow: 2;
+      }
+    }
+  }
+}

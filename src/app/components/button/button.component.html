@@ -1,0 +1,11 @@
+<button
+  mat-button
+  class="btn"
+  [class.primary]="buttonType === ButtonType.PRIMARY"
+  [class.primary_transparant]="buttonType === ButtonType.BLUE_TRANSPARENT"
+  [class.secundary]="buttonType === ButtonType.SECUNDARY"
+  [class.yellow_transparent]="buttonType === ButtonType.YELLOW_TRANSPARENT"
+  [class.large_transparent]="buttonType === ButtonType.LARGE_TRANSPARENT"
+>
+  {{ text }}
+</button>

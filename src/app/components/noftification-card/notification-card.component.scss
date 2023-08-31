@@ -1,0 +1,23 @@
+@import "../../../constants.scss";
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - #{$navbarHeight});
+}
+
+.notification {
+  padding: 40px;
+  background: $secundary;
+  color: $primary;
+  box-shadow: 0px 3px 15px rgb(0 0 0 / 20%);
+  border-radius: 10px;
+
+  &_connect {
+    display: flex;
+    margin-top: 40px;
+    justify-content: flex-end;
+  }
+}

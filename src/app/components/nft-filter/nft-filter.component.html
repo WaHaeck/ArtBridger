@@ -1,0 +1,38 @@
+<section class="nft-filter">
+  <div class="container">
+    <article class="nft-filter_grid">
+      <div class="nft-filter_wrapper">
+        <div class="nft-filter_wrapper_search">
+          <button
+            mat-icon-button
+            aria-label="Search"
+            class="nft-filter_wrapper_search_button"
+            (click)="handleSearch()"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+          <mat-form-field class="nft-filter_wrapper_search_input">
+            <mat-label>Search your nft</mat-label>
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="searchString"
+              (keydown.enter)="handleSearch()"
+            />
+            <button
+              *ngIf="searchString"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              class="nft-filter_wrapper_search_button"
+              (click)="handleClear()"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="nft-filter_wrapper_info"></div>
+      </div>
+    </article>
+  </div>
+</section>
